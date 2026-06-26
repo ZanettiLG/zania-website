@@ -10,8 +10,10 @@ Landing page institucional para **Zan.IA** — empresa de tecnologia focada em d
 
 | Camada | Tecnologia |
 |--------|-----------|
-| **Markup** | HTML5 semântico (monolítico) |
-| **Estilos** | Tailwind CSS 3 via CDN + CSS vanilla inline |
+| **Framework** | SvelteKit 5 (Runes mode) |
+| **Build** | Vite + `@sveltejs/adapter-static` |
+| **Markup** | Componentes Svelte com scoped CSS |
+| **Estilos** | Scoped `<style>` por componente + `app.css` global (design tokens) |
 | **Ícones** | Google Material Symbols Outlined |
 | **Tipografia** | Space Grotesk, Geist, JetBrains Mono (Google Fonts) |
 | **Tema** | Dark mode (Material Design 3) |
@@ -19,16 +21,20 @@ Landing page institucional para **Zan.IA** — empresa de tecnologia focada em d
 
 ## Architecture
 
-- **Único arquivo:** `build/index.html` contém todo HTML, CSS e JS
-- **Sem build step:** Projeto estático puro, sem bundler ou framework
-- **Sem dependências npm:** Tudo carregado via CDN
+- **SvelteKit 5** com Runes mode (reatividade via `$state`, `$effect`, `$props`)
+- **Static site generation** via `@sveltejs/adapter-static` — output em `build/`
+- **Scoped CSS nativo:** cada componente Svelte tem seu próprio `<style>`, sem conflitos de classe
+- **Único CSS global:** `src/lib/app.css` com design tokens (variáveis CSS), reset e utilitários compartilhados (glass-panel, animações)
+- **Sem Tailwind CSS:** utilidades substituídas por classes CSS escopadas + variáveis de design token
 
 ## Build & Deploy
 
 ```bash
-# Não há build — o HTML está pronto em build/index.html
+npm run dev      # Desenvolvimento em localhost:5173
+npm run build    # Gera build/ com saída estática
+npm run preview  # Preview do build local
 # Deploy automático via GitHub Actions ao push na branch main
-# workflow: .github/workflows/static.yml
+# workflow: .github/workflows/deploy.yml
 # Servido de: ./build/
 ```
 
@@ -36,25 +42,46 @@ Landing page institucional para **Zan.IA** — empresa de tecnologia focada em d
 
 ```
 zania-website/
-├── build/
-│   └── index.html          # Landing page completa (produção)
-├── docs/
-│   └── INSTITUCIONAL.md    # Documento institucional da empresa
+├── src/
+│   ├── lib/
+│   │   ├── components/        # Componentes Svelte com <style> escopado
+│   │   │   ├── Header.svelte
+│   │   │   ├── Hero.svelte
+│   │   │   ├── Authority.svelte
+│   │   │   ├── Solutions.svelte
+│   │   │   ├── Differential.svelte
+│   │   │   ├── Testimonials.svelte
+│   │   │   ├── CTA.svelte
+│   │   │   └── Footer.svelte
+│   │   └── app.css            # CSS global (design tokens + reset + utilitários)
+│   ├── routes/
+│   │   ├── +layout.svelte     # Layout principal (Header + Footer)
+│   │   ├── +layout.js         # Config: prerender = true
+│   │   └── +page.svelte       # Home page (monta todos os componentes)
+│   └── app.html               # Template HTML (fontes, meta)
+├── static/
+│   └── assets/images/         # Imagens locais
+├── build/                     # Output do build (gerado, não versionar)
 ├── .github/
-│   ├── ISSUES.md           # Plano de refatoração (3 issues prioritárias)
+│   ├── ISSUES.md
 │   └── workflows/
-│       └── static.yml      # Deploy GitHub Pages
-└── AGENTS.md               # Este arquivo
+│       └── deploy.yml         # Build + Deploy GitHub Pages
+├── svelte.config.js
+├── vite.config.ts
+├── package.json
+└── AGENTS.md
 ```
 
 ## Convenções de Código
 
-- **Classes Tailwind:** Usar classes utilitárias do Tailwind (`flex`, `items-center`, `gap-*`, `px-*`)
-- **Design Tokens:** Usar variáveis CSS `--color-*`, `--font-*`, `--spacing-*` definidas em `:root`
-- **Animações:** Preferir CSS `@keyframes` para efeitos (pulse, glow, scanning-line)
-- **Ícones:** Usar `<span class="material-symbols-outlined">icon_name</span>`
-- **Responsividade:** Breakpoint mobile em 768px via media queries
-- **Glass panels:** Classe `.glass-panel` com backdrop-filter e borda sutil
+- **Componentes Svelte:** Usar Runes mode (`$state()`, `$effect()`, `$props()`)
+- **Scoped CSS:** Cada componente tem `<style>` próprio — sem classes globais, sem conflitos
+- **Design Tokens:** Usar variáveis CSS `--color-*`, `--font-*`, `--spacing-*` de `app.css`
+- **Animações:** `@keyframes` definidos em `app.css`; usar classes `.animate-*` quando necessário
+- **Ícones:** `<span class="material-symbols-outlined">icon_name</span>`
+- **Imagens:** Referenciar como `/assets/images/nome.ext` (mapeado de `static/assets/images/`)
+- **Responsividade:** Breakpoint mobile em 768px via media queries nos componentes
+- **Glass panels:** Classe global `.glass-panel` com backdrop-filter e borda sutil
 
 ## GitHub Workflow (Issues & PRs)
 
@@ -68,14 +95,6 @@ zania-website/
 3. Incluir `Closes #N` no corpo do PR
 4. Abrir PR apontando para `main`
 5. Após merge, confirmar que a issue foi fechada
-
-## Refatoração Planejada
-
-Veja [`.github/ISSUES.md`](./.github/ISSUES.md) para o plano completo de refatoração:
-
-1. **Migrar Tailwind CDN → CSS vanilla** com estrutura modular (`css/base/`, `css/components/`, `css/utilities/`)
-2. **Modularizar HTML** em componentes semânticos
-3. **Localizar imagens** (remover dependência de CDNs externas)
 
 ## Canais de Contato
 
