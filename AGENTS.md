@@ -56,6 +56,19 @@ zania-website/
 - **Responsividade:** Breakpoint mobile em 768px via media queries
 - **Glass panels:** Classe `.glass-panel` com backdrop-filter e borda sutil
 
+## GitHub Workflow (Issues & PRs)
+
+### Auto-close de Issues
+- Incluir `Closes #N` (ou `Fixes`/`Resolves`) no corpo do PR — GitHub fecha a issue automaticamente ao mergear.
+- **Verificar** se a issue foi fechada após o merge. Se não, fechar manualmente com `state=closed`, `reason=completed`.
+
+### Fluxo Recomendado
+1. Criar branch a partir de `main` (`feat/nome-descritivo`)
+2. Fazer commit com mensagem descritiva (imperativo, < 72 chars)
+3. Incluir `Closes #N` no corpo do PR
+4. Abrir PR apontando para `main`
+5. Após merge, confirmar que a issue foi fechada
+
 ## Refatoração Planejada
 
 Veja [`.github/ISSUES.md`](./.github/ISSUES.md) para o plano completo de refatoração:
