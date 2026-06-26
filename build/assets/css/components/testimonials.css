@@ -133,8 +133,19 @@
   background-color: rgba(186, 242, 255, 0.2);
 }
 
+/* Largura dos cards de depoimento */
+.glass-panel.snap-center {
+  width: 100%;
+  flex-shrink: 0;
+}
+
 @media (min-width: 768px) {
   .testimonials__card {
+    width: 500px;
+  }
+
+  /* Desktop: largura fixa para o carrossel */
+  .glass-panel.snap-center {
     width: 500px;
   }
 }
