@@ -5,159 +5,10 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>ZAN.IA | Deep Tech Systems</title>
     <link rel="shortcut icon" href="assets/images/zania.logo.ico" type="image/x-icon"/>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;family=Geist:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-    <script>
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "surface-container-high": "#23293c",
-                        "on-primary": "#00363f",
-                        "on-tertiary-fixed-variant": "#3f465c",
-                        "tertiary-container": "#c4cce6",
-                        "inverse-primary": "#006877",
-                        "surface-container": "#191f31",
-                        "inverse-on-surface": "#2a3043",
-                        "on-error-container": "#ffdad6",
-                        "on-surface": "#dce1fb",
-                        "on-secondary-fixed-variant": "#39485a",
-                        "primary-container": "#00e0ff",
-                        "tertiary-fixed": "#dae2fd",
-                        "secondary-fixed-dim": "#b9c8de",
-                        "on-primary-fixed": "#001f25",
-                        "surface": "#0c1324",
-                        "surface-dim": "#0c1324",
-                        "surface-container-highest": "#2e3447",
-                        "secondary-container": "#39485a",
-                        "on-tertiary-container": "#4e566c",
-                        "primary": "#baf2ff",
-                        "on-secondary-container": "#a7b6cc",
-                        "tertiary": "#e2e8ff",
-                        "secondary-fixed": "#d4e4fa",
-                        "on-secondary-fixed": "#0d1c2d",
-                        "on-primary-container": "#005f6d",
-                        "secondary": "#b9c8de",
-                        "primary-fixed-dim": "#00daf8",
-                        "outline": "#859397",
-                        "primary-fixed": "#a5eeff",
-                        "inverse-surface": "#dce1fb",
-                        "surface-tint": "#00daf8",
-                        "tertiary-fixed-dim": "#bec6e0",
-                        "background": "#0c1324",
-                        "on-background": "#dce1fb",
-                        "outline-variant": "#3b494c",
-                        "on-secondary": "#233143",
-                        "on-error": "#690005"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.125rem",
-                        "lg": "0.25rem",
-                        "xl": "0.5rem",
-                        "full": "0.75rem"
-                    },
-                    "spacing": {
-                        "gutter": "24px",
-                        "margin-mobile": "16px",
-                        "margin-desktop": "64px",
-                        "base": "8px",
-                        "container-max": "1440px"
-                    },
-                    "fontFamily": {
-                        "display-lg": ["Space Grotesk"],
-                        "headline-lg-mobile": ["Space Grotesk"],
-                        "headline-lg": ["Space Grotesk"],
-                        "code-md": ["JetBrains Mono"],
-                        "label-sm": ["JetBrains Mono"],
-                        "body-md": ["Geist"],
-                        "headline-md": ["Space Grotesk"],
-                        "body-lg": ["Geist"]
-                    },
-                    "fontSize": {
-                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
-                        "headline-lg": ["40px", {"lineHeight": "1.2", "fontWeight": "600"}],
-                        "code-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
-                        "label-sm": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500"}],
-                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
-                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
-                    }
-                },
-            },
-        }
-    </script>
-    <style>
-        body {
-            background-color: #070d1f;
-            color: #dce1fb;
-            overflow-x: hidden;
-        }
-
-        .glass-panel {
-            background: rgba(15, 23, 42, 0.7);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(186, 242, 255, 0.1);
-        }
-
-        .electric-glow {
-            box-shadow: 0 0 15px rgba(0, 224, 255, 0.4);
-        }
-
-        .electric-glow-hover:hover {
-            box-shadow: 0 0 25px rgba(0, 224, 255, 0.7);
-        }
-
-        .data-pulse {
-            position: relative;
-        }
-        
-        .data-pulse::after {
-            content: '';
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: #00e0ff;
-            border-radius: 50%;
-            top: 50%;
-            left: -10px;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 1; }
-            100% { transform: scale(3); opacity: 0; }
-        }
-
-        .scanning-line {
-            width: 100%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #00e0ff, transparent);
-            position: absolute;
-            top: 0;
-            left: 0;
-            animation: scan 3s linear infinite;
-        }
-
-        @keyframes scan {
-            0% { top: 0; }
-            100% { top: 100%; }
-        }
-
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-
-        .scrollbar-hide::-webkit-scrollbar {
-            display: none;
-        }
-        .scrollbar-hide {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/tailwind-replacement.css?v=2"/>
+    <link rel="stylesheet" href="assets/css/main.css?v=2"/>
 </head>
 <body class="font-body-md">
     <!-- Top AppBar -->
@@ -208,7 +59,7 @@
             <div class="grid md:grid-cols-2 gap-16 items-center">
                 <div class="relative group">
                     <div class="absolute -inset-4 bg-primary/5 rounded-2xl blur-3xl group-hover:bg-primary/10 transition-colors"></div>
-                    <div class="relative glass-panel rounded-2xl p-4 overflow-hidden">
+                    <div class="relative glass-panel rounded-2xl p-4 border border-primary/10 overflow-hidden">
                         <div class="scanning-line"></div>
                         <img class="w-full aspect-square object-cover rounded-xl grayscale group-hover:grayscale-0 transition-all duration-700" alt="A sophisticated macro shot of high-tech integrated circuits and glowing blue neural pathways inside a glass chamber, representing the fusion of legacy engineering and future artificial intelligence." src="assets/images/authority-circuit.webp" loading="lazy"/>
                     </div>
@@ -223,11 +74,11 @@
                         A Zan.IA é formada por entusiastas e veteranos. Combinamos décadas de bagagem de mercado com a agilidade da nova era tecnológica para entregar resultados reais.
                     </p>
                     <div class="grid grid-cols-2 gap-4 pt-4">
-                        <div class="glass-panel p-4 rounded-xl border-l-2 border-primary">
+                        <div class="glass-panel p-4 rounded-xl border border-l-2 border-primary">
                             <div class="font-display-lg text-headline-md text-primary font-bold">20+</div>
                             <div class="font-label-sm text-label-sm uppercase opacity-60">Anos de Experiência</div>
                         </div>
-                        <div class="glass-panel p-4 rounded-xl border-l-2 border-primary">
+                        <div class="glass-panel p-4 rounded-xl border border-l-2 border-primary">
                             <div class="font-display-lg text-headline-md text-primary font-bold">100%</div>
                             <div class="font-label-sm text-label-sm uppercase opacity-60">IA Nativa</div>
                         </div>
@@ -237,7 +88,7 @@
         </section>
 
         <!-- Solutions Bento Grid -->
-        <section class="py-24 px-margin-mobile bg-surface-container-lowest/50">
+        <section class="py-24 px-margin-mobile">
             <div class="max-w-container-max mx-auto">
                 <div class="text-center mb-16 space-y-4">
                     <h2 class="font-headline-lg text-on-surface">Soluções Deep Tech</h2>
@@ -245,7 +96,7 @@
                 </div>
                 <div class="grid md:grid-cols-3 gap-gutter">
                     <!-- Card 1 -->
-                    <div class="glass-panel p-8 rounded-2xl flex flex-col gap-6 group hover:border-primary/50 transition-all duration-500">
+                    <div class="glass-panel p-8 rounded-2xl flex flex-col gap-6 border border-primary/10 group hover:border-primary/50 transition-all duration-500">
                         <div class="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
                             <span class="material-symbols-outlined text-4xl" data-icon="web_asset">web_asset</span>
                         </div>
@@ -259,7 +110,7 @@
                         </div>
                     </div>
                     <!-- Card 2 -->
-                    <div class="glass-panel p-8 rounded-2xl flex flex-col gap-6 group hover:border-primary/50 transition-all duration-500 relative overflow-hidden">
+                    <div class="glass-panel p-8 rounded-2xl flex flex-col gap-6 border border-primary/10 group hover:border-primary/50 transition-all duration-500 relative overflow-hidden">
                         <div class="absolute -right-12 -top-12 w-32 h-32 bg-primary/5 rounded-full blur-2xl"></div>
                         <div class="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
                             <span class="material-symbols-outlined text-4xl" data-icon="smart_toy">smart_toy</span>
@@ -274,7 +125,7 @@
                         </div>
                     </div>
                     <!-- Card 3 -->
-                    <div class="glass-panel p-8 rounded-2xl flex flex-col gap-6 group hover:border-primary/50 transition-all duration-500">
+                    <div class="glass-panel p-8 rounded-2xl flex flex-col gap-6 border border-primary/10 group hover:border-primary/50 transition-all duration-500">
                         <div class="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
                             <span class="material-symbols-outlined text-4xl" data-icon="video_settings">video_settings</span>
                         </div>
@@ -319,7 +170,7 @@
         </section>
 
         <!-- Testimonials Carousel Section -->
-        <section class="py-24 px-margin-mobile bg-surface-container-lowest/30">
+        <section class="py-24 px-margin-mobile">
             <div class="max-w-container-max mx-auto">
                 <div class="text-center mb-16 space-y-4">
                     <h2 class="font-headline-lg text-on-surface">O que nossos parceiros dizem</h2>
@@ -391,7 +242,7 @@
 
         <!-- CTA Section -->
         <section class="py-24 px-margin-mobile text-center">
-            <div class="max-w-2xl mx-auto glass-panel p-10 rounded-2xl border-t-4 border-primary shadow-2xl shadow-primary/10">
+            <div class="max-w-2xl mx-auto glass-panel p-10 rounded-2xl border border-t-4 border-primary shadow-2xl shadow-primary/10">
                 <h2 class="font-headline-md text-on-surface mb-4">Pronto para liderar a revolução no seu setor?</h2>
                 <p class="font-body-md text-on-surface-variant opacity-70 mb-8">Nossa equipe de especialistas está pronta para diagnosticar sua infraestrutura atual.</p>
                 <a class="inline-flex items-center gap-3 bg-[#25D366] text-white font-headline-md px-8 py-5 rounded-xl hover:scale-105 active:scale-95 transition-all shadow-lg shadow-[#25D366]/20" href="#">
@@ -403,7 +254,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="w-full px-margin-mobile md:px-margin-desktop py-12 flex flex-col md:flex-row justify-between items-center gap-base border-t border-outline-variant/10 bg-surface-container-lowest">
+    <footer class="w-full px-margin-mobile md:px-margin-desktop py-12 flex flex-col md:flex-row justify-between items-center gap-base border-t border-outline-variant/10">
         <div class="flex flex-col items-center md:items-start gap-4">
             <div class="flex items-center gap-2">
                 <span class="material-symbols-outlined text-primary text-xl" data-icon="memory">memory</span>
