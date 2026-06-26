@@ -1,4 +1,6 @@
 ---
+context: fork
+name: otimizar-imagens
 description: "Otimiza imagens da landing page Zan.IA. Converte para formatos modernos (WebP/AVIF), gera srcset com múltiplas resoluções, aplica lazy loading, e sugere compressão. Reduz o peso total de imagens mantendo qualidade visual."
 ---
 

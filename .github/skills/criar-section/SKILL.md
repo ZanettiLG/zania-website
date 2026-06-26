@@ -1,4 +1,6 @@
 ---
+context: fork
+name: criar-section
 description: "Cria uma nova seção HTML na landing page Zan.IA seguindo os padrões visuais existentes. Gera o HTML completo com glass panels, gradientes, tipografia consistente e animações padrão do projeto."
 ---
 
@@ -64,12 +66,14 @@ Cria uma nova seção HTML em `build/index.html` mantendo consistência visual c
 /* Aplicar com animate-fadeInUp na seção ou cards */
 ```
 
+Inclua o bloco `@keyframes fadeInUp` apenas se ele ainda não estiver definido em `build/index.html` ou nos seus stylesheets vinculados. Se já estiver definido, aplique a classe `animate-fadeInUp` sem redeclarar os keyframes.
+
 ## Procedimento
 
-1. **Analise** o `build/index.html` para entender o padrão visual atual
-2. **Identifique** onde inserir a nova seção (antes do footer, entre seções existentes, etc.)
+1. **Analise** o `build/index.html` para entender o padrão visual atual. Se o arquivo não existir ou não puder ser lido, pare e peça ao usuário para fornecer o caminho do arquivo ou compartilhar o HTML relevante antes de prosseguir.
+2. **Insira** a nova seção imediatamente antes do elemento `<footer>`, a menos que o usuário especifique uma posição diferente explicitamente.
 3. **Crie** a seção seguindo a estrutura acima
-4. **Adapte** o grid conforme necessário (1, 2, 3 colunas)
+4. **Adapte** o grid de acordo com a quantidade de itens de conteúdo distintos: 1 item → 1 coluna, 2 itens → 2 colunas, 3+ itens → 3 colunas
 5. **Mantenha** os estilos existentes — não adicione CSS novo se o padrão já cobre
 
 ## Checklist de Consistência
