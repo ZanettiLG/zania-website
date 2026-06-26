@@ -1,0 +1,118 @@
+/* ══════════════════════════════════════════════════════════════ */
+/* TYPOGRAPHY — ZAN.IA Design System                            */
+/* ══════════════════════════════════════════════════════════════ */
+
+/* ── Font Family Utilities (match Tailwind fontFamily config) ── */
+.font-display-lg {
+  font-family: var(--font-display);
+}
+
+.font-headline-lg {
+  font-family: var(--font-display);
+}
+
+.font-headline-lg-mobile {
+  font-family: var(--font-display);
+}
+
+.font-headline-md {
+  font-family: var(--font-display);
+}
+
+.font-body-lg {
+  font-family: var(--font-body);
+}
+
+.font-body-md {
+  font-family: var(--font-body);
+}
+
+.font-label-sm {
+  font-family: var(--font-code);
+}
+
+.font-code-md {
+  font-family: var(--font-code);
+}
+
+/* ── Text Size Utilities (match Tailwind fontSize config) ── */
+.text-display-lg {
+  font-size: var(--font-size-display-lg);
+  line-height: var(--line-height-display-lg);
+  letter-spacing: var(--letter-spacing-display-lg);
+  font-weight: var(--font-weight-display-lg);
+}
+
+.text-headline-lg {
+  font-size: var(--font-size-headline-lg);
+  line-height: var(--line-height-headline-lg);
+  font-weight: var(--font-weight-headline-lg);
+}
+
+.text-headline-lg-mobile {
+  font-size: var(--font-size-headline-lg-mobile);
+  line-height: var(--line-height-headline-lg);
+  font-weight: var(--font-weight-headline-lg);
+}
+
+.text-headline-md {
+  font-size: var(--font-size-headline-md);
+  line-height: var(--line-height-headline-md);
+  font-weight: var(--font-weight-headline-md);
+}
+
+.text-body-lg {
+  font-size: var(--font-size-body-lg);
+  line-height: var(--line-height-body-lg);
+  font-weight: var(--font-weight-body-lg);
+}
+
+.text-body-md {
+  font-size: var(--font-size-body-md);
+  line-height: var(--line-height-body-md);
+  font-weight: var(--font-weight-body-md);
+}
+
+.text-label-sm {
+  font-size: var(--font-size-label-sm);
+  line-height: var(--line-height-label-sm);
+  letter-spacing: var(--letter-spacing-label-sm);
+  font-weight: var(--font-weight-label-sm);
+}
+
+.text-code-md {
+  font-size: var(--font-size-code-md);
+  line-height: var(--line-height-code-md);
+  font-weight: var(--font-weight-code-md);
+}
+
+/* ── Helpers ── */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.uppercase { text-transform: uppercase; }
+.italic { font-style: italic; }
+
+.font-bold { font-weight: var(--font-weight-bold); }
+.font-semibold { font-weight: var(--font-weight-semibold); }
+.font-medium { font-weight: var(--font-weight-medium); }
+.font-normal { font-weight: var(--font-weight-regular); }
+
+.tracking-tight { letter-spacing: var(--letter-spacing-tight); }
+.tracking-tighter { letter-spacing: var(--letter-spacing-tighter); }
+.tracking-wide { letter-spacing: var(--letter-spacing-wide); }
+.tracking-widest { letter-spacing: var(--letter-spacing-widest); }
+
+.leading-tight { line-height: 1.25; }
+.leading-relaxed { line-height: 1.625; }
+
+/* ── Text Colors ── */
+.text-primary { color: var(--color-primary); }
+.text-primary-container { color: var(--color-primary-container); }
+.text-on-surface { color: var(--color-on-surface); }
+.text-on-surface-variant { color: var(--color-on-surface); }
+.text-on-primary { color: var(--color-on-primary); }
+.text-on-primary-container { color: var(--color-on-primary-container); }
+.text-white { color: #ffffff; }
+.text-primary-fixed-dim { color: var(--color-primary-fixed-dim); }
